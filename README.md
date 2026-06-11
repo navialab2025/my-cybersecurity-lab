@@ -1,14 +1,14 @@
-# 🛡️ Cyber Security & Penetration Testing Lab
+# Cyber Security & Penetration Testing Lab
 
 自身のサイバーセキュリティおよびウェブペネトレーションテストの学習記録と、習得スキルの証明をまとめたリポジトリです。
 
 ---
 
-## 🎓 外部講座 修了実績 (Certifications)
+## 外部講座 修了実績 (Certifications)
 
 ### ■ Secure AI Code & Libraries with Static Analysis (2026年修了)
 AIによって生成されたコードやオープンソースライブラリにおける、静的解析ツール（SAST）を用いた脆弱性検知とセキュアコーディングの実践を修了しました。
-* [📜 修了証明書を表示する(https://github.com/user-attachments/assets/de3c9f32-ac32-44d6-bc0f-129f352a59b0)]
+* [修了証明書を表示する(https://github.com/user-attachments/assets/de3c9f32-ac32-44d6-bc0f-129f352a59b0)]
 
 **【習得したスキル・知識】**
 * 静的解析ツール（SAST）を用いたAIコードのリスク管理
@@ -17,7 +17,7 @@ AIによって生成されたコードやオープンソースライブラリに
 
 ---
 
-## 🔬 ウェブペネトレーションテスト 学習記録 (Web Pentest Logs)
+## ウェブペネトレーションテスト 学習記録 (Web Pentest Logs)
 
 ### 実験環境構築 (Docker / Laravel 11.9ベース環境)
 最新のパッケージ管理（Composer）の仕様変更による環境構築エラーを、Dockerfileのコード修正およびネットワーク連携（Nginx/Laravelポート結合）のデバッグにより自力で解決し、完全ローカルな脆弱性診断演習環境（14コンテナ構成）を構築完了。
@@ -35,7 +35,7 @@ Webpen Labが開く
 http://webpen.test/login、ログイン画面がでる。
 
 
-📝 Webペネトレーション実験室（webpen-lab）構築備忘録
+Webペネトレーション実験室（webpen-lab）構築備忘録
 1. 概要と発生した問題
 環境: ペネ本（Laravel 11.9ベースのWebアプリケーション含む14個のコンテナ構成）
 
@@ -63,8 +63,21 @@ Dockerfile
 ブラウザやBurp Suiteが webpen.test というURLの名前を解決できるように、Windowsのシステムファイルに管理者権限で直接書き込みを行う。
 PowerShellを開き、以下の一撃コマンドを実行（青い画面が出たら「はい」を許可）。
 
+Network Configuration (hosts)
+ブラウザから webpen.test でローカル環境にアクセスできるようにするため、OSの hosts ファイルに以下のエントリを追加します。
+
+Plaintext
+127.0.0.1 webpen.test
+【OS別の設定方法】
+
+Windowsの場合: >   管理者権限でPowerShellを開き、以下のコマンドを実行するか、メモ帳を管理者権限で開いて C:\Windows\System32\drivers\etc\hosts を直接編集します。
+
 PowerShell
 Start-Process powershell -ArgumentList '-Command "Add-Content C:\Windows\System32\drivers\etc\hosts \"`n127.0.0.1 webpen.test\""' -Verb RunAs
+Linux / Macの場合: >   ターミナルを開き、以下のコマンドで /etc/hosts に追記します。
+
+Bash
+echo "127.0.0.1 webpen.test" | sudo tee -a /etc/hosts
 ③ 古い記憶（キャッシュ）を消去してビルド＆起動
 Dockerにこれまでの失敗の記憶を完全に忘れさせ、新しい設計図でイチから組み立て直す。
 
