@@ -41,7 +41,7 @@ Webペネトレーション実験室（webpen-lab）構築備忘録
 
 トラブル: 2026年現在のComposerの最新セキュリティ仕様により、インターネット上の公式倉庫（Packagist）が脆弱性のある古いLaravelパッケージのダウンロードを強制遮断。これにより RUN composer update で exit code: 2 となりビルドが100%失敗する。
 
-2. 根本解決の手順（ハック内容）
+2. 根本解決の手順（Troubleshooting）
 ① 設計図（Dockerfile）の修正
 laravel-app/Dockerfile を開き、インターネットへの通信と、それに伴う自動安全装置をバイパスするために以下の行をコメントアウト（# を追加）して保存する。
 
