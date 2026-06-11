@@ -8,7 +8,7 @@
 
 ### ■ Secure AI Code & Libraries with Static Analysis (2026年修了)
 AIによって生成されたコードやオープンソースライブラリにおける、静的解析ツール（SAST）を用いた脆弱性検知とセキュアコーディングの実践を修了しました。
-* [📜 修了証明書を表示する（ここに先ほどの秘密のリンクを貼る）]
+* [📜 修了証明書を表示する(https://github.com/user-attachments/files/28836866/Coursera.2578C167A8KT.pdf)]
 
 **【習得したスキル・知識】**
 * 静的解析ツール（SAST）を用いたAIコードのリスク管理
